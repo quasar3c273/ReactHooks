@@ -6,7 +6,7 @@ const RenderCountExample = () => {
     const renderCount = useRef(0);
     const [otherState, setOtherState] = useState(false);
     const toggleOtherState = () => {
-      setOtherState(!otherState);
+        setOtherState(!otherState);
     };
     useEffect(() => {
         renderCount.current++;
@@ -14,9 +14,11 @@ const RenderCountExample = () => {
     return (
         <CardWrapper>
             <SmallTitle>Подсчет количесва рендеров</SmallTitle>
-            <Divider/>
+            <Divider />
             <p>render count: {renderCount.current}</p>
-            <button className="btn btn-primary" onClick={toggleOtherState}>Toggle other state</button>
+            <button className="btn btn-primary" onClick={toggleOtherState}>
+                Toggle other state
+            </button>
         </CardWrapper>
     );
 };

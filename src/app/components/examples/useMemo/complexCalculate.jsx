@@ -26,12 +26,25 @@ const ComplexCalculateExample = () => {
                 <SmallTitle>Кэширование сложных вычислений</SmallTitle>
                 <p>Value : {value}</p>
                 <p>Result fact: {fact}</p>
-                <button className="btn btn-primary mx-2" onClick={() => setValue(prevState => prevState + 10)}>Increment</button>
-                <button className="btn btn-primary mx-2" onClick={() => setValue(prevState => prevState - 10)}>Decrement</button>
+                <button
+                    className="btn btn-primary mx-2"
+                    onClick={() => setValue((prevState) => prevState + 10)}
+                >
+                    Increment
+                </button>
+                <button
+                    className="btn btn-primary mx-2"
+                    onClick={() => setValue((prevState) => prevState - 10)}
+                >
+                    Decrement
+                </button>
             </CardWrapper>
             <CardWrapper>
                 <SmallTitle>Зависимость от сторонних setState</SmallTitle>
-                <button className={"btn ms-md-2 btn-" + buttonColor} onClick={() => setOtherState(prevState => !prevState)}>
+                <button
+                    className={"btn ms-md-2 btn-" + buttonColor}
+                    onClick={() => setOtherState((prevState) => !prevState)}
+                >
                     Change color
                 </button>
             </CardWrapper>

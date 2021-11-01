@@ -7,14 +7,15 @@ const UseCallBackExample = () => {
     const withOutCallback = useRef(0);
     const withCallback = useRef(0);
     const handleChange = ({ target }) => {
-      setData(prevState => ({
-          ...prevState, [target.name]: target.value
-      }));
+        setData((prevState) => ({
+            ...prevState,
+            [target.name]: target.value
+        }));
     };
 
     // WithOut Callback
     const validateWithOutCallback = (data) => {
-      console.log(data);
+        console.log(data);
     };
     useEffect(() => {
         withOutCallback.current++;
@@ -37,7 +38,9 @@ const UseCallBackExample = () => {
             <SmallTitle>Example</SmallTitle>
             <p>Render withOutCallback: {withOutCallback.current}</p>
             <p>Render withCallback: {withCallback.current}</p>
-            <label htmlFor="email" className="form-label">Email</label>
+            <label htmlFor="email" className="form-label">
+                Email
+            </label>
             <input
                 type="email"
                 className="form-control"

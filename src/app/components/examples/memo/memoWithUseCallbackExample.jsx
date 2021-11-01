@@ -6,7 +6,11 @@ const LogOutButton = ({ onLogOut }) => {
         console.log("render button");
     });
 
-    return <button onClick={onLogOut} className="btn btn-primary">LogOut</button>;
+    return (
+        <button onClick={onLogOut} className="btn btn-primary">
+            LogOut
+        </button>
+    );
 };
 
 LogOutButton.propTypes = {
@@ -14,10 +18,7 @@ LogOutButton.propTypes = {
 };
 
 function areEqual(prevState, nextState) {
-    if (prevState.onLogOut !== nextState.onLogOut) {
-        return false;
-    }
-    return true;
+    return prevState.onLogOut === nextState.onLogOut;
 }
 
 const MemoizedLogOutButton = React.memo(LogOutButton, areEqual);
@@ -25,13 +26,20 @@ const MemoizedLogOutButton = React.memo(LogOutButton, areEqual);
 const MemoWithUseCallbackExample = (props) => {
     const [state, setState] = useState(false);
     const handleLogOut = useCallback(() => {
-      localStorage.removeItem("auth");
+        localStorage.removeItem("auth");
     }, [props]);
 
-    return <>
-        <button onClick={() => setState(!state)} className="btn btn-primary">initiate rerender</button>
-        <MemoizedLogOutButton onLogOut={handleLogOut}/>;
-    </>;
+    return (
+        <>
+            <button
+                onClick={() => setState(!state)}
+                className="btn btn-primary"
+            >
+                initiate rerender
+            </button>
+            <MemoizedLogOutButton onLogOut={handleLogOut} />;
+        </>
+    );
 };
 
 export default MemoWithUseCallbackExample;

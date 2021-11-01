@@ -20,16 +20,16 @@ const HOCExample = () => {
             </CardWrapper>
             <CardWrapper>
                 <SmallTitle>2. Функциональный HOC</SmallTitle>
-                <Divider/>
-                <ComponentWithAuth/>
+                <Divider />
+                <ComponentWithAuth />
             </CardWrapper>
             <CardWrapper>
                 <SmallTitle>3. HOC With Styles and Props</SmallTitle>
-                <ComponentWithPropsStyles/>
+                <ComponentWithPropsStyles />
             </CardWrapper>
             <CardWrapper>
                 <SmallTitle>4. Composed HOC</SmallTitle>
-                <NewComponent/>
+                <NewComponent />
             </CardWrapper>
         </>
     );

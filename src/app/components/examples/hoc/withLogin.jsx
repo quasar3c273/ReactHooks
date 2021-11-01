@@ -6,7 +6,8 @@ const withLogin = (Component) => (props) => {
     return (
         <>
             {isLogin ? <Component {...props} /> : <SmallTitle>Auth</SmallTitle>}
-        </>);
+        </>
+    );
 };
 
 export default withLogin;

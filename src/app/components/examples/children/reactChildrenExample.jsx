@@ -11,8 +11,9 @@ const FormComponent = ({ children }) => {
         console.log(data);
     }, [data]);
     const handleChange = (target) => {
-        setData(prevState => ({
-            ...prevState, [target.name]: target.value
+        setData((prevState) => ({
+            ...prevState,
+            [target.name]: target.value
         }));
     };
 
@@ -38,10 +39,10 @@ const ReactChildrenExample = () => {
     return (
         <CardWrapper>
             <SmallTitle>Clone form and add props</SmallTitle>
-            <Divider/>
+            <Divider />
             <FormComponent>
-                <TextField name="email" label="email"/>
-                <TextField name="password" label="Пароль" type="password"/>
+                <TextField name="email" label="email" />
+                <TextField name="password" label="Пароль" type="password" />
             </FormComponent>
         </CardWrapper>
     );
