@@ -1,5 +1,24 @@
 import React from "react";
 import CollapseWrapper from "../common/collapse";
+import PropTypes from "prop-types";
+
+const ComponentWrapper = ({ children }) => {
+    return React.Children.map(children, (child, i) => {
+        return (
+            <div className="d-flex">
+                {i + 1} {React.cloneElement(child)}
+            </div>
+        );
+    });
+};
+
+ComponentWrapper.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ])
+};
+
 const ChildrenExercise = () => {
     return (
         <CollapseWrapper title="Упражнение">
@@ -10,10 +29,11 @@ const ChildrenExercise = () => {
                 <code>React.Children.map</code> так и{" "}
                 <code>React.Children.toArray</code>
             </p>
-
-            <Component />
-            <Component />
-            <Component />
+            <ComponentWrapper>
+                <Component />
+                <Component />
+                <Component />
+            </ComponentWrapper>
         </CollapseWrapper>
     );
 };
