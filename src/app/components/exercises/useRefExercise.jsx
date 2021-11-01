@@ -29,7 +29,9 @@ const UseRefExercise = () => {
             >
                 <small ref={buttonRef}>Блок</small>
             </div>
-            <button className="btn btn-primary" onClick={handleClick}>Изменить блок</button>
+            <button className="btn btn-primary" onClick={handleClick}>
+                Изменить блок
+            </button>
         </CollapseWrapper>
     );
 };
